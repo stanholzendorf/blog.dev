@@ -16,7 +16,7 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('/sayhello/{name}', function($name)
+Route::get('/sayhello/{name?}', function($name = 'Codeup')
 {
 	$data = array('name' => $name);
 	return View::make('my-first-view')->with($data);
@@ -24,22 +24,25 @@ Route::get('/sayhello/{name}', function($name)
 
 Route::get('/resume', function()
 {
-	return "This is my resume";
+	return View::make('resume');
 
 
 });
 
 Route::get('/portfolio', function()
 {
-	return "This is my portfolio";
+	return View::make('portfolio');
 
 
 });
 
 Route::get('/rolldice/{guess?}', function($guess = 1)
 {
-
-$data = array('guess' => $guess);
+$roll = mt_rand(1, 6);
+$data = array(
+	'guess' => $guess,
+	'roll' => $roll
+	);
 if ($guess > 6 || $guess < 1) {
 	return "Your guess was invalid!" ;
 } else {
