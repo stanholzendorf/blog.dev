@@ -6,5 +6,6 @@
 
 @section('content')
 <h1>This will be my Resume!</h1>
+<a href="{{{action('HomeController@showPortfolio')}}}">Portfolio Page</a>
 @stop
 
