@@ -33,4 +33,6 @@ Route::get('/rolldice/{guess?}', 'HomeController@rolldice');
 
 Route::get('/random-guess', 'HomeController@randomGuess');
 
+Route::get('/weatherapp', 'WeatherController@showWeather');
+
 

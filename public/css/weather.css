@@ -1,0 +1,83 @@
+    body {
+
+		background: url(/img/cloud-hd-backgrounds.jpg);
+
+	}
+
+	#mainContainer {
+
+		height: 315px;
+		width: 630px;
+		margin: auto;
+		background-color: skyblue;
+		border:2px solid black;
+
+	}
+
+	.center {
+
+		text-align: center;
+
+	}	
+
+	#allDays {
+
+
+		text-align: center;	
+		background-color: black;
+		margin: 0 auto;
+
+	}
+
+	.dayBox {
+
+		float:left;
+		padding: 0px 43px;
+    	background-color: silver;
+    	text-align: center;
+    	border:1px solid black;
+    	position: relative;
+    	width: 33.3333%;
+  		
+	}
+
+	 #map-canvas {
+            width: 770px;
+            height: 345px;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            margin: auto;
+        }
+
+      #inputSubmit {
+
+        	
+        	/*height: 70px;
+			width: 650px;*/
+			margin: auto;
+			padding: 8px 0px;
+			
+        	
+        }
+
+      #lat {
+
+        	height: 30px;
+			width: 180px;
+        }
+
+      #lng {
+
+        	height: 30px;
+        	width: 180px;
+        }
+
+      #SubmitCoor {
+
+        	padding: 5px 10px;
+        	color: black;
+        	background-color: silver;
+        }
