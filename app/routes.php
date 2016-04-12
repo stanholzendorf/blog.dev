@@ -35,4 +35,8 @@ Route::get('/random-guess', 'HomeController@randomGuess');
 
 Route::get('/weatherapp', 'WeatherController@showWeather');
 
+Route::resource('posts', 'PostsController');
+
+
+
 
