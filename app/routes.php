@@ -40,3 +40,6 @@ Route::resource('posts', 'PostsController');
 
 
 
+
+
+

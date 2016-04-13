@@ -9,8 +9,12 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
-		return 'The index method is called by /posts. Index shows a list of all posts!';
+		$posts = Post::all();
+
+
+
+		// return 'The index method is called by /posts. Index shows a list of all posts!';
+		return View::make('posts.index')->with('posts', $posts);
 	}
 
 
@@ -23,7 +27,7 @@ class PostsController extends \BaseController {
 	{
 		//
 		//return 'The create method is called by /posts/create. Create shows a form for creating a post!';
-		return View::make('/posts/create');
+		return View::make('posts.create');
 		// $inputs = Input::all();
 	}
 
@@ -35,14 +39,30 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		if (Input::has('name')) {
-			    // name is not empty
-			$inputs = Input::all();
-			} else {
-			    return Redirect::action('PostsController@create')->withInput();
-			}
+		
+			// create the validator
+	    $validator = Validator::make(Input::all(), Post::$rules);
+
+	    // attempt validation
+	    if ($validator->fails()) {
+	        // validation failed, redirect to the post create page with validation errors and old inputs
+	        return Redirect::back()->withInput()->withErrors($validator);
+	    } else {
+	        // validation succeeded, create and save the post
+	    }
+
+		// return Redirect::action('PostsController@create')->withInput();
+
+		$post = new Post;
+		$post->title=Input::get('title');
+		$post->body=Input::get('body');
+		$post->description=Input::get('description');
+		$post->save();
+		return Redirect::action('PostsController@index');
+			    
+	
 		//
-		return 'The store method is called by /posts, however it has a POST request instead of the GET request from the method index which also is called by /posts. Store stores the new post';
+		// return 'The store method is called by /posts, however it has a POST request instead of the GET request from the method index which also is called by /posts. Store stores the new post';
 
 		// return Redirect::back()->withInput();
 	}
@@ -56,8 +76,15 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
+		
+
+		$post = Post::find($id);
+		return View::make('posts.show')->with('post', $post);
+
 		//
-		return 'The show method is called by /posts/{post} with {posts} being the single variable of the post in question. Show shows a specific post!';
+		// return 'The show method is called by /posts/{post} with {posts} being the single variable of the post in question. Show shows a specific post!';
+
+
 	}
 
 
