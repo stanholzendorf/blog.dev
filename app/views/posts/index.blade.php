@@ -8,15 +8,19 @@
 @section('content')
 <h1>ALL POSTS ARE BELOW</h1>
 	@foreach ($posts as $post)
-	<p>{{{$post->title}}}</p>
+	<h3><a href="{{{ action('PostsController@show', $post->id) }}}">{{{$post->title}}}</a></h3>
 	<p>{{{$post->body}}}</p>
 	<p>{{{$post->description}}}</p>
-	<a href="{{{ action('PostsController@show', $post->id) }}}">Show Post</a>
+	<p>Created on {{{$post->created_at->setTimezone('America/Chicago')->format('l, F jS Y @ h:i:s A')}}}</p>
+	<p>Updated {{{$post->updated_at->diffForHumans()}}}</p>
+	
 
 
 	@endforeach
 <hr>	
-<a href="{{{ action('PostsController@create') }}}">Create a new Post!</a>	
+<a href="{{{ action('PostsController@create') }}}">Create a new Post!</a> 
+{{ $posts->links() }}
+
 
 @stop
 
