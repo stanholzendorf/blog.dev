@@ -1,6 +1,8 @@
 <?php
 
-class Post extends Eloquent
+
+
+class Post extends BaseModel
 {
     
 	public static $rules = array(
@@ -10,4 +12,6 @@ class Post extends Eloquent
 
 
     protected $table = 'posts';
+
+
 }

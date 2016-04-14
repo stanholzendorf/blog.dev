@@ -9,7 +9,10 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
+		
 		$posts = Post::paginate(3);
+		
+
 
 
 
