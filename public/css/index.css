@@ -1,0 +1,145 @@
+.margin100{
+	margin-top: 100px;
+}
+
+.fontSize48{
+	font-size: 48px;
+}
+.marginLeft100{
+	margin-left: 100px;
+}
+
+.featuretteImage{
+	height: 300px;
+	width: 450px;
+	border-radius: 10px;
+}
+.centeredMediaButtons{ 
+	width: 188px; 
+	float: none;
+}
+.addPadding{
+	margin-top: 4px;
+	padding-right: 18px;
+}
+
+.adjustForSidebar{
+	padding-left: 200px;
+}
+
+.adjustTextInJumbotron{
+	margin-left: 350px;
+}
+
+#forcedInputSize{
+	width: 250px;
+}
+
+.impactText {
+	font-family: "Arial Black", Gadget, sans-serif;
+   -webkit-text-stroke: 2px black;
+   color: white !important;
+   text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+.stricklandPic{
+	background-image: url(/img/Strickland_Propane.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+
+	background-size: 100% 300px;
+}
+
+.jumbotron{
+	width: 80%;
+	margin-left: 240px;
+	height: 300px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+#jumbotron1{
+	width: 80%;
+	height: 300px;
+	margin-left: 100px !important;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px;    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0;  
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color: #3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color: #496ebc; 
+}
+.btn-tw{
+    color: #fff;
+    background-color: #55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color: #59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+.jumbotronColor{
+	background-color: #bdc3c7;
+}
+
+.padModal{
+	padding-right: 31%;
+	padding-left: 31%;
+}
+
+.pad40{
+	padding-top: 40px;
+}
+
+.btn-primary:hover{
+    background-color: #3a3a3a;
+    border-color: #3a3a3a;
+}
+
+.btn-primary{
+    background-color: #3a3a3a;
+    border-color: #3a3a3a;
+}

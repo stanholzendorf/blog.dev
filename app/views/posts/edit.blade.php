@@ -4,6 +4,9 @@
 <title>Edit Posts</title>
 
 @stop
+@include('layou.navbarAuth')
+<hr>
+<hr>
 
 @section('content')
 
@@ -49,6 +52,7 @@
 
 <hr>
 <a href="{{{ action('PostsController@index') }}}">Go back to the Index</a>
+@include('layout.footer')
 @stop
 
 @section('bottom-script')

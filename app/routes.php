@@ -37,6 +37,18 @@ Route::get('/weatherapp', 'WeatherController@showWeather');
 
 Route::resource('posts', 'PostsController');
 
+Route::get('/login', 'UserController@loginpage');
+
+Route::post('authlogin', 'UserController@login');
+
+Route::get('logout', 'UserController@logout');
+
+// Route::get('query-test', function() {
+// 	$posts = Post::where('title', '=', 'Seeded Post 2')->get();
+// 	foreach($posts as $post) {
+// 		echo $post->title;
+// 	}
+// });
 
 
 

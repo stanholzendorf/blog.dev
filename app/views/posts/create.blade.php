@@ -5,6 +5,10 @@
 
 @stop
 
+@include('layout.navbarAuth')
+<hr>
+<hr>
+
 @section('content')
 
 {{ Form::open(array('action' => 'PostsController@store')) }}
@@ -48,6 +52,7 @@
 
 
 <a href="{{{ action('PostsController@index') }}}">Go back to the Index</a>
+@include('layout.footer')
 @stop
 
 @section('bottom-script')

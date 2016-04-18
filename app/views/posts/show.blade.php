@@ -4,6 +4,23 @@
 <title>Show Post</title>
 @stop
 
+@if (Auth::check())
+
+      @include('layout.navbarAuth')
+       <hr>
+       <hr>
+       <hr>
+
+
+  @else
+
+    @include('layout.navbar')
+
+    <hr>
+    <hr>
+    <hr>
+ @endif
+
 
 @section('content')
 <h1>Post Details</h1>
@@ -18,7 +35,7 @@
 <a href="{{{ action('PostsController@index') }}}">Go back to the Index</a>
 
 
-
+@include('layout.footer')
 @stop
 
 

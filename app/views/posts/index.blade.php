@@ -1,8 +1,28 @@
 @extends('layout.master')
 
+
+
 @section('top-script')
 <title>Show all Posts</title>
 @stop
+
+@if (Auth::check())
+
+      @include('layout.navbarAuth')
+       <hr>
+       <hr>
+       <hr>
+
+
+  @else
+
+    @include('layout.navbar')
+
+    <hr>
+    <hr>
+    <hr>
+ @endif
+
 
 
 @section('content')
@@ -17,15 +37,19 @@
 
 
 	@endforeach
-<hr>	
-<a href="{{{ action('PostsController@create') }}}">Create a new Post!</a> 
-{{ $posts->links() }}
+<hr> 	
+<a href="{{{ action('PostsController@create') }}}">Create a new Post!</a>
+<a href="{{{ action('PostsController@index') }}}">Return to the Index Page!</a>  
+{{ $posts->appends(['search' => Input::get('search')])->links() }}
 
+@stop
+
+
+@include('layout.footer')
+
+
+@section('bottom-script')
 
 @stop
 
-
-
-@section('bottom-scropt')
-
-@stop
+ 

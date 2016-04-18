@@ -2,6 +2,12 @@
 
 class PostsController extends \BaseController {
 
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth', array('except' => array('index', 'show')));
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -10,7 +16,19 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		
-		$posts = Post::paginate(3);
+		
+		$search = Input::get('search');
+
+		if (is_null($search))
+		{
+			$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(3);
+		}	
+		else
+		{
+			$posts = Post::with('user')->where('title', 'LIKE', "%$search%")->paginate(3);
+		}	
+
+		// $posts = Post::paginate(3);
 		
 
 
@@ -57,6 +75,7 @@ class PostsController extends \BaseController {
 		$post->title=Input::get('title');
 		$post->body=Input::get('body');
 		$post->description=Input::get('description');
+		$post->user_id = Auth::id();
 		$post->save();
 		Log::info($post);
 		Session::flash('successMessage', 'This post was created successfully!!');
@@ -174,6 +193,24 @@ class PostsController extends \BaseController {
 		// return 'The destroy method is called by /posts/{post}, however it has a DELETE request. Destroy deletes a specific post!';
 	}
 
+	// public function search()
+	// {
+		
+		
+
+
+	// 	$title = Input::get('title');
+	// 	if($title && !empty($title)){
+
+	// 		$query = $DB::table('posts')->where('title', '=', $title);
+	// 		$post = Post::find($id);
+	// 		return View::make('posts.show')->with('post', $post);	
+	// 	} else {
+
+	// 		Session::flash('errorMessage', 'This search could not be implemented!!');
+	//         return Redirect::back()->withInput()->withErrors($validator);
+	// 	}
+	// }
 
 
 
