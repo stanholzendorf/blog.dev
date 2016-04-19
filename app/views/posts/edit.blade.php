@@ -4,7 +4,7 @@
 <title>Edit Posts</title>
 
 @stop
-@include('layou.navbarAuth')
+@include('layout.navbarAuth')
 <hr>
 <hr>
 

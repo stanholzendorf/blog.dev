@@ -9,6 +9,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
+	const ADMIN = 1;
+	const STANDARD = 2;
+
 	/**
 	 * The database table used by the model.
 	 *
@@ -26,6 +29,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function posts()
 	{
     	return $this->hasMany('Post');
+	}
+
+	public function setPasswordAttribute($value)
+	{
+    $this->attributes['password'] = Hash::make($value);
+	}
+
+	public function isStandard() 
+	{
+		return $this->role_id == User::STANDARD;
 	}
 
 }

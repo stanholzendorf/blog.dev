@@ -26,13 +26,14 @@
 
 
 @section('content')
-<h1>ALL POSTS ARE BELOW</h1>
+<h1>My Blog</h1>
 	@foreach ($posts as $post)
 	<h3><a href="{{{ action('PostsController@show', $post->id) }}}">{{{$post->title}}}</a></h3>
 	<p>{{{$post->body}}}</p>
 	<p>{{{$post->description}}}</p>
 	<p>Created on {{{$post->created_at->format('l, F jS Y @ h:i:s A')}}}</p>
 	<p>Updated {{{$post->updated_at->diffForHumans()}}}</p>
+  <p>Written by {{{$post->user->first_name . " " . $post->user->last_name}}}</p>
 	
 
 

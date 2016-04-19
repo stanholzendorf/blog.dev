@@ -7,6 +7,7 @@ class PostsController extends \BaseController {
 	{
 		parent::__construct();
 		$this->beforeFilter('auth', array('except' => array('index', 'show')));
+		$this->beforeFilter('edit', array('only' => array('edit', 'update')));
 	}
 	/**
 	 * Display a listing of the resource.
@@ -71,7 +72,18 @@ class PostsController extends \BaseController {
 	        return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
 	        // validation succeeded, create and save the post
+	    
 	    $post = new Post;
+	    if (Input::hasFile('image')) {
+	    	$image = Input::file('image');
+	    	$image->move(
+	    		public_path('/img'),
+	    		$image->getClientOriginalName()
+	    	);
+	    	$post->image = "/img/{$image->getClientOriginalName()}";	
+	    }
+
+
 		$post->title=Input::get('title');
 		$post->body=Input::get('body');
 		$post->description=Input::get('description');

@@ -11,7 +11,7 @@
 
 @section('content')
 
-{{ Form::open(array('action' => 'PostsController@store')) }}
+{{ Form::open(array('action' => 'PostsController@store', 'files'=> true)) }}
   <div class="form-group">
     <!-- <label class="control-label col-sm-2" for="name">Title</label> -->
     {{ Form::label('title', 'Title', array('class' => 'control-label col-sm-2')) }}
@@ -40,7 +40,17 @@
     <div class="col-sm-10">
      {{ Form::text('description', null, array('class'=>'form-control', 'placeholder' => 'Descr')) }}
     </div>
-  </div>   
+  </div>
+  <div class="form-group">
+    <!-- <label class="control-label col-sm-2" for="name">Descr</label> -->
+    {{ Form::label('image', 'Image', array('class' => 'control-label col-sm-2')) }}
+    <div class="col-sm-10">
+     {{ Form::file('image') }}
+     @if ($errors->has('image'))
+          <p> {{{ $errors->first('image') }}}</p>
+      @endif 
+    </div>
+  </div>     
   <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default">Submit</button> 
