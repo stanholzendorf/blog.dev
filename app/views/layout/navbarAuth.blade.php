@@ -27,6 +27,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>My Options</b> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
+          <li><a href={{{ action('WeatherController@showWeather') }}}>Test</a></li>
+            <li><a href={{{ action('PostsController@index') }}}>See Posts Home</a></li>
+            <li><a href={{{ action('UserController@profile') }}}>My Profile</a></li>
             <li><a href={{{ action('UserController@logout') }}}>Logout</a></li>
           </ul>  
         </li>
