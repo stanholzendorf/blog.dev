@@ -14,11 +14,14 @@ class UserController extends \BaseController {
 	{
 		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')))) {
 
-			return Redirect::intended('/profile');
+			// return Redirect::intended('/profile');
+			return Response::json(['success' => true]);
 		} else {
 
-			Session::flash('errorMessage', 'Your login information was incorrect!');
-			return Redirect::back()->withInput();
+			// Session::flash('errorMessage', 'Your login information was incorrect!');
+			// return Redirect::back()->withInput();
+
+			return Response::json(['error' => 'Your username and/or password was incorrect!']);
 		}
 	} 
 

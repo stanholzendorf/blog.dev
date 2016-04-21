@@ -1,0 +1,18 @@
+.navbar-nav>li>a:focus {
+	outline: none;
+}
+
+.editPost, .editPost  {
+
+	font: heavy;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	text-decoration: none;
+	selection: black;
+
+}
+
+
+
+
+
