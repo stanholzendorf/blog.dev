@@ -48,6 +48,10 @@ Route::get('profile', 'UserController@profile');
 Route::get('useredit', 'UserController@edit');
 
 Route::put('update', 'UserController@update');
+
+Route::get('testindex', 'PostsController@testindex');
+
+Route::get('testshow/{id}', 'PostsController@testshow');
 // Route::get('query-test', function() {
 // 	$posts = Post::where('title', '=', 'Seeded Post 2')->get();
 // 	foreach($posts as $post) {

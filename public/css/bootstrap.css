@@ -10,8 +10,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 15;
-  padding-top: 50px;
+  margin: 0;
 }
 article,
 aside,
@@ -1584,7 +1583,6 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  display: flex;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
@@ -4965,7 +4963,7 @@ a.badge:focus {
   padding-bottom: 30px;
   margin-bottom: 30px;
   color: inherit;
-  background-color: #7f8c8d;
+  background-color: #eee;
 }
 .jumbotron h1,
 .jumbotron .h1 {

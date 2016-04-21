@@ -30,13 +30,27 @@ class PostsController extends \BaseController {
 		}	
 
 		// $posts = Post::paginate(3);
-		
-
-
-
-
 		// return 'The index method is called by /posts. Index shows a list of all posts!';
 		return View::make('posts.index')->with('posts', $posts);
+	}
+
+
+	public function testindex()
+	{
+		
+		
+		$search = Input::get('search');
+
+		if (is_null($search))
+		{
+			$posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(3);
+		}	
+		else
+		{
+			$posts = Post::with('user')->where('title', 'LIKE', "%$search%")->paginate(3);
+		}	
+
+		return View::make('posts.testindex')->with('posts', $posts);
 	}
 
 
@@ -122,6 +136,23 @@ class PostsController extends \BaseController {
 		}
 
 		return View::make('posts.show')->with('post', $post);
+
+		//
+		// return 'The show method is called by /posts/{post} with {posts} being the single variable of the post in question. Show shows a specific post!';
+
+
+	}
+
+	public function testshow($id)
+	{
+		
+
+		$post = Post::find($id);
+		if(!$post) {
+			App::abort(404);
+		}
+
+		return View::make('posts.testshow')->with('post', $post);
 
 		//
 		// return 'The show method is called by /posts/{post} with {posts} being the single variable of the post in question. Show shows a specific post!';
