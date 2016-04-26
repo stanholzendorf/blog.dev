@@ -64,7 +64,10 @@ div {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a id="black1"href={{{ action('UserController@profile') }}}>{{{Auth::user()->first_name}}}'s Profile</a>
+                        <a id="black1"href="#">{{{Auth::user()->first_name}}} is logged in!!</a>
+                    </li>
+                    <li>
+                        <a id="black2"href={{{ action('UserController@testprofile') }}}>My Profile</a>
                     </li>
                     <li>
                         <a id="black3"href={{{ action('UserController@logout') }}}>Logout</a>
@@ -143,16 +146,12 @@ div {
         	<div class="container">
              <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    @foreach($posts as $post)
-                    <p>{{ HTML::image($post->image) }} </p>
-                    <h2 class="post-title">{{{$post->title}}}</h2>
-                    <p>{{{$post->body}}}</p>
-                    <p>Written {{{$post->created_at->diffForHumans()}}}</p>
-                    <a class="editPost"href="{{{ action('PostsController@edit', $posts->first()->id) }}}">EDIT THIS POST!</a>
-                    @endforeach
+                    <p>{{{$posts->first()->image}}}</p>
+                    <h2 class="post-title">{{{$posts->first()->title}}}</h2>
+                    <p>{{{$posts->first()->body}}}</p>
                 </div>
                 <hr>
-                
+                <a class="editPost"href="{{{ action('PostsController@edit', $post->id) }}}">EDIT THIS POST!</a>
             </div>
           </div>
     	 </article>

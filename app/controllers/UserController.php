@@ -47,6 +47,21 @@ class UserController extends \BaseController {
 
 	}
 
+	public function testprofile()
+	{
+		
+
+		// $user = User::with('posts')->find(Auth::id());
+		$user = Auth::user();
+		if(!$user) {
+			App::abort(404);
+		}
+		$posts = $user->posts;
+		return View::make('users.testprofile')->with(['user' => $user, 'posts' => $posts]);
+
+
+	}
+
 
 	public function edit()
 	{

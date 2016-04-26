@@ -1,5 +1,6 @@
 .navbar-nav>li>a:focus {
 	outline: none;
+	
 }
 
 .editPost, .editPost  {
@@ -11,6 +12,7 @@
 	selection: black;
 
 }
+
 
 
 
