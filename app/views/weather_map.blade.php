@@ -22,7 +22,7 @@
 			<input type="text" id="lng" placeholder="Type in Longitude">
 		<button id="SubmitCoor" class="btn btn-info btn-lg">Submit new coordiantes</button>
 	</div>
-	<h4>Alternatively use the map and maker to adjust the location!!</h4>
+	<h4>Alternatively use the map and marker to adjust the location!!</h4>
 	<div id="map-canvas"></div>
 </div>
 @stop
