@@ -51,4 +51,40 @@ class HomeController extends BaseController {
 		$guess = mt_rand(1, 6);
 		return Redirect::Action('HomeController@rolldice', $guess);
 	}
+
+	public function homePage()
+	{
+		return View::make('homepage');
+	}
+
+
+	public function getContact()
+    {
+        $subject = Input::get('subject');
+        $from = Input::get('from');
+        $email = Input::get('email');
+        $phonenumber = Input::get('phonenumber');
+        $budget = Input::get('budget');
+        $address = Input::get('address');
+        $body = Input::get('body');
+
+
+        $data = [
+            'subject'=>$subject,
+            'from'=>$from,
+            'email'=>$email,
+            'phonenumber'=>$phonenumber,
+            'budget'=>$budget,
+            'address'=>$address,
+            'body'=>$body
+        ];
+
+        Mail::send('emails.contact', $data, function($message) use ($data)
+        {
+            $message->from($data['email'], $data['from']);
+            $message->to('sholzendorf@mail.com', 'Stan Holzendorf')->subject($data['subject']);
+        });
+        Session::flash('successMessage', 'Your information was sent!');
+        return Redirect::action('HomeController@homePage');
+    }
 }		

@@ -41,6 +41,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->role_id == User::STANDARD;
 	}
 
+	
+
 	public static $rules = array(
         'first_name' => 'required|alpha_num|min:3|max:32',
         'last_name' => 'required|alpha_num|min:3|max:32',

@@ -61,6 +61,8 @@ Route::get('testprofile', 'UserController@testprofile');
 // 	}
 // });
 
+Route::get('/homepage', 'HomeController@homePage');
+Route::post('/homepage', 'HomeController@getContact');
 
 
 
