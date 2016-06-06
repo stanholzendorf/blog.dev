@@ -25,7 +25,7 @@ class BaseModel extends Eloquent
         'from' => 'required|regex:/^[(a-zA-Z\s)]+$/u|min:3|max:32',
         'email' => 'required|email|',
         'phonenumber' => 'required|numeric|min:5',
-        'budget' => 'required|regex:/^[(a-zA-Z\s)]+$/u',
+        'budget' => 'required|',
         'address' => 'required|min:9|max:600',
         'body' => 'required|min:3|max:32'
     );
