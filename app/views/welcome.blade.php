@@ -35,10 +35,10 @@
 	    	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 	    	{{{ Session::get('successMessage') }}}</div>
 		@endif
-        <p class="lead">Company X is a new Real Estate company specialising in the TX market. .<br> We pride ourselves with having active content. In order to best provide our customers with the latest informtion and leads, which are customized to the individual, we require every vistor to our content site to fill out a small form with some overall details.</p>
+        <p class="lead">Company X is a new Real Estate company specializing in the TX market.<br> We pride ourselves with having active content. In order to best serve our customers with the latest information and leads we invite all interested visitors to share some basic information with us. This will enable us to provide you with customized details of properties, based on your profile.</p>
       </div>
       <hr>
-      <a href="{{{ action('HomeController@homePage') }}}" role="button" class="btn btn-lg btn-success">Please share your in formation here.</a>
+      <a href="{{{ action('HomeController@homePage') }}}" role="button" class="btn btn-lg btn-success">Please share your information here.</a>
 
     </div><!-- /.container -->
 @stop

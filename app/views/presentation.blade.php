@@ -27,16 +27,16 @@
 		<p>The following list is prioritized according to how I develop applications/websites:</p>
 		<ol>
 			<li>Separation of concerns -<br>
-			<p>I belive that without seperating and priortizing requirements one inevitable runs into problems down the road.</p>
+			<p>I believe that without separating and prioritizing requirements one inevitable runs into problems down the road.</p>
 			</li>
 			<li>Maintainability -<br>
-			<p>Ensuring that a site is strutured well ans easily maintainable makes future addidtions and/or updates much easier.</p>
+			<p>Ensuring that a site is structured well ans easily maintainable makes future additions and/or updates much easier.</p>
 			</li>
 			<li>Application/Site performance -<br>
-			<p>Performance is part of the User-exppierence and the overall quality of the end product.</p>
+			<p>Performance is part of the User-experience and the overall quality of the end product.</p>
 			</li>
 			<li>Rapid development -<br>
-			<p>Of course timley delivery is important and not to be neglected, however it ensuring the above items first the delived product could potentially lack the desired results.</p>
+			<p>Of course timely delivery is important and not to be neglected, however not ensuring the above items first, the delivered product could potentially lack the desired results.</p>
 			</li>
 		</ol>
 		<br>
@@ -46,7 +46,7 @@
 		<p>An example of an existing high traffic web application that I think provides excellent usability for the user:</p>
 		<ul>
 			<li>The Google Search Engine and most of its suite in general. Google is used daily by millions of users worldwide and when it comes to usability it does not get much simple and straight forward as Google.</li>
-			<li>Tumblr is another high traffic web app that in regards to usabilty is pretty easy to pick up</li>
+			<li>Tumblr is another high traffic web app that in regards to usability is pretty easy to pick up</li>
 			<li>And of course imgur, which I am using below.......</li>
 		</ul>
 		
