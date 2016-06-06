@@ -52,39 +52,62 @@ class HomeController extends BaseController {
 		return Redirect::Action('HomeController@rolldice', $guess);
 	}
 
+	public function welcomePage()
+	{
+		return View::make('welcome');
+	}
+
 	public function homePage()
 	{
 		return View::make('homepage');
 	}
 
+	public function presentPage()
+	{
+		return View::make('presentation');
+	}
+
 
 	public function getContact()
     {
-        $subject = Input::get('subject');
-        $from = Input::get('from');
-        $email = Input::get('email');
-        $phonenumber = Input::get('phonenumber');
-        $budget = Input::get('budget');
-        $address = Input::get('address');
-        $body = Input::get('body');
+        
+    	$validator = Validator::make(Input::all(), BaseModel::$rules);
+
+        if ($validator->fails()) {
+
+            Session::flash('errorMessage', 'Information was not sent!!');
+            return Redirect::back()->withInput()->withErrors($validator);
+        } else {
 
 
-        $data = [
-            'subject'=>$subject,
-            'from'=>$from,
-            'email'=>$email,
-            'phonenumber'=>$phonenumber,
-            'budget'=>$budget,
-            'address'=>$address,
-            'body'=>$body
-        ];
 
-        Mail::send('emails.contact', $data, function($message) use ($data)
-        {
-            $message->from($data['email'], $data['from']);
-            $message->to('sholzendorf@mail.com', 'Stan Holzendorf')->subject($data['subject']);
-        });
-        Session::flash('successMessage', 'Your information was sent!');
-        return Redirect::action('HomeController@homePage');
-    }
+
+		        $subject = Input::get('subject');
+		        $from = Input::get('from');
+		        $email = Input::get('email');
+		        $phonenumber = Input::get('phonenumber');
+		        $budget = Input::get('budget');
+		        $address = Input::get('address');
+		        $body = Input::get('body');
+
+
+		        $data = [
+		            'subject'=>$subject,
+		            'from'=>$from,
+		            'email'=>$email,
+		            'phonenumber'=>$phonenumber,
+		            'budget'=>$budget,
+		            'address'=>$address,
+		            'body'=>$body
+		        ];
+
+		        Mail::send('emails.contact', $data, function($message) use ($data)
+		        {
+		            $message->from($data['email'], $data['from']);
+		            $message->to('sholzendorf@mail.com', 'Stan Holzendorf')->subject($data['subject']);
+		        });
+		        Session::flash('successMessage', 'Your information was sent!');
+		        return Redirect::action('HomeController@welcomePage');
+		    }
+	}
 }		

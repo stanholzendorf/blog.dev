@@ -63,6 +63,8 @@ Route::get('testprofile', 'UserController@testprofile');
 
 Route::get('/homepage', 'HomeController@homePage');
 Route::post('/homepage', 'HomeController@getContact');
+Route::get('welcome', 'HomeController@welcomePage');
+Route::get('/presentation', 'HomeController@presentPage');
 
 
 
